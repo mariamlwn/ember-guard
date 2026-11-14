@@ -1,0 +1,127 @@
+# Curated from NASA/TM-20210011385 Appendix A (Tables A.1-A.6, report pp.103-113). One line per test.
+# burn_flows: air-display velocities (cm/s) at which a flame was sustained, in order. L = low-flow plateau below anemometer floor (fan pot ~0.3-0.5).
+# end: EXT=extinguished at end_flow | BLOW=blowoff at end_flow | NOIGN=no sustained flame at end_flow | END=still burning when test ended (burnout/stopped for other reason)
+# end_flow: cm/s; L = below anemometer floor; 0 = fan turned off. Values with ~ are estimated from fan pot/fan display (see README).
+test|pi|table|page|material|geometry|thk_mm|width_cm|config|restrictors|o2_cal_i|o2_cal_f|burn_flows|end|end_flow|note
+B1|Bhattacharjee|A.1|103|PMMA|film|0.1|2|opposed|2|22.2|22.2|5|EXT|0|flow turned off after spread halfway; flame out very quickly
+B2|Bhattacharjee|A.1|104|PMMA|film|0.2|2|opposed|2|22.2||5|END||no stills; final O2 not recorded
+B3|Bhattacharjee|A.1|104|PMMA|film|0.1|2|opposed|2|22.2|21.8|2|END||lower flow flames more blue
+B4|Bhattacharjee|A.1|104|PMMA|film|0.3|2|opposed|2|22.2|22.2|5|END||
+B5|Bhattacharjee|A.1|104|PMMA|film|0.2|2|opposed|2|22.2|21.9|5|END||repeat of B2
+B6|Bhattacharjee|A.1|104|PMMA|film|0.1|2|opposed|2|21.0|20.9|3,5|END||complete burnout
+B7|Bhattacharjee|A.1|104|PMMA|film|0.4|2|opposed|2|22.2|22.1|2|END||
+B8|Bhattacharjee|A.1|104|PMMA|film|0.2|2|opposed|0|21.0|20.5|10|END||spread at 10 cm/s, no blowoff
+B9|Bhattacharjee|A.1|104|PMMA|film|0.1|2|opposed|2|21.0|20.9|2|EXT|L|extinguished at pot 0.35
+B10|Bhattacharjee|A.1|103|PMMA|film|0.2|1|opposed|2|21.0|20.8|5,4,3,2,1|EXT|L|extinguished at pot 0.35
+B11|Bhattacharjee|A.1|103|PMMA|film|0.2|2|opposed|2|21.0|20.7|5,3,1|EXT|L|extinguished at pot 0.35
+B12|Bhattacharjee|A.1|103|PMMA|film|0.3|2|opposed|2|22.2|22.1|2|END||mostly blue
+B13|Bhattacharjee|A.1|103|PMMA|film|0.4|2|opposed|2|21.0|20.5|10,5,4,3,2,1|EXT|L|extinguished at pot 0.35
+B14|Bhattacharjee|A.1|103|PMMA|film|0.2|1|opposed|2|15.0||NA|NOIGN|5|only brief ignition
+B15|Bhattacharjee|A.1|103|PMMA|film|0.1|2|opposed|0|21.0|20.8|10|END||spread at 10 cm/s, no blowoff
+B16|Bhattacharjee|A.1|103|PMMA|film|0.1|2|opposed|2|17.3|17.2|3,5|EXT|L|quenched after prolonged burn at pot 0.4
+B17|Bhattacharjee|A.1|103|PMMA|film|0.2|1|opposed|2|17.5|17.4|5,3|EXT|L|extinguished reaching pot 0.4
+B18|Bhattacharjee|A.1|104|PMMA|film|0.2|1|opposed|0|17.4|17.4|10|BLOW|~15|blew out at fan pot 7.0
+B19|Bhattacharjee|A.1|104|PMMA|film|0.1|2|opposed|0|17.3|17.2|10|BLOW|~13|blew out at fan pot 6.0
+B20|Bhattacharjee|A.1|104|PMMA|film|0.1|2|opposed|2|17.4|17.4|5,3,L|END||burned entire sample (last pot 0.5)
+B21|Bhattacharjee|A.1|104|PMMA|film|0.2|1|opposed|1|20.8|20.6|5|EXT|L|out at pot 0.355
+B22|Bhattacharjee|A.1|104|PMMA|film|0.2|1|opposed|1|20.7|20.5|5,2|EXT|L|out at pot 0.36
+F1|Ferkul|A.2|105|Nomex III fabric|fabric||| concurrent|2|22.2|22.2|NA|NOIGN|9.5|extinguished while igniter still on
+F2|Ferkul|A.2|105|Nomex III fabric|fabric|||concurrent|2|21.0|21.0|NA|NOIGN|15|flame would not sustain
+F3|Ferkul|A.2|105|Nomex III fabric|fabric|||concurrent|1|21.7||NA|NOIGN|8|brief flash only
+F4|Ferkul|A.2|105|Japan wax candle|candle|||stagnation|2|17.4|17.4|3,L|EXT|L|out at pot 0.305
+P1|Fernandez-Pello|A.3|106|PMMA black|rod|6.35||opposed|2|17.7|17.5|5,2|EXT|L|extinction at pot 0.315
+P2|Fernandez-Pello|A.3|106|PMMA black|rod|6.35||opposed|2|17.4|17.2|5,2.5,2,L|EXT|0|stable at pot 0.33; fan switched off
+P3a|Fernandez-Pello|A.3|107|PMMA clear|rod|6.35||opposed|2|17.7|17.4|5,2.5,L|EXT|L|extinguished at pot 0.3
+P3b|Fernandez-Pello|A.3|107|PMMA clear|rod|6.35||opposed|2|17.4|16.8|5,L|END||spread at pot 0.31; camera failed
+P4|Fernandez-Pello|A.3|107|PMMA black|rod|9.525||opposed|2|18.5|17.1|5,L|EXT|0|steady until flow off
+P5|Fernandez-Pello|A.3|107|PMMA black|rod|12.7||opposed|2|19.3|17.6|5,L|EXT|0|flame persisted down to pot 0.28; flow to 0
+P6|Fernandez-Pello|A.3|107|PMMA black|rod|6.35||opposed|2|18.9|18.5|5,L|EXT|0|steady until flow off
+P8|Fernandez-Pello|A.3|107|PMMA black|rod|9.525||opposed|2|16.4|16.3|NA|NOIGN|15|would not stay lit at 5,10,15; flat tip
+P9|Fernandez-Pello|A.3|107|PMMA black|rod|12.7||opposed|2|17.6|17.1|5,L|EXT|L|out at pot 0.28
+P10|Fernandez-Pello|A.3|106|PMMA black|rod|6.35||opposed|2|17.0|16.4|5,L|EXT|L|finite quench at pot 0.3
+P12|Fernandez-Pello|A.3|106|PMMA black|rod|9.525||opposed|2|17.5|16.8|5,3,2,1,0.5,L|EXT|L|out at pot 0.34
+P13a|Fernandez-Pello|A.3|106|PMMA black|rod|12.7||opposed|2|20.7|19.1|5,L|EXT|0|flame out when pot to 0
+P13b|Fernandez-Pello|A.3|106|PMMA black|rod|12.7||opposed|2|20.6|20.2|5,L|EXT|L|out at pot 0.32
+P14|Fernandez-Pello|A.3|106|PMMA black|rod|6.35||opposed|2|18.4|18.0|5,L|EXT|L|out at pot 0.31
+P15|Fernandez-Pello|A.3|106|PMMA black|rod|6.35||opposed|2|18.0|17.5|5,L|END||stable burn
+P16|Fernandez-Pello|A.3|106|PMMA black|rod|6.35||concurrent|2|18.2|17.4|5,8,2,L|EXT|L|out at pot 0.32
+P17|Fernandez-Pello|A.3|106|PMMA black|rod|6.35||opposed|2|16.8|16.5|5,3,2,22,2,L|EXT|L|no blowoff at 22; out at pot 0.34
+P18|Fernandez-Pello|A.3|106|PMMA black|rod|6.35||opposed|2|20.0|19.0|2,L|EXT|L|out at pot 0.32
+P19|Fernandez-Pello|A.3|106|PMMA black|rod|6.35||concurrent|2|17.5|16.7|5,8,2,~22|EXT|L|no blowoff at max flow; out at pot 0.32
+P20|Fernandez-Pello|A.3|106|PMMA black|rod|6.35||opposed|2|19.0|18.2|2,L|EXT|L|out at pot 0.335
+P21a|Fernandez-Pello|A.3|106|PMMA black|rod|6.35||opposed|2|16.3|16.3|NA|EXT|5|self-extinguished at 5 after sample end became flat (geometry effect)
+P22a|Fernandez-Pello|A.3|107|PMMA black|rod|9.525||opposed|2|20.8||5|EXT|L|out at pot 0.32-0.36; rod maybe not preheated
+P22b|Fernandez-Pello|A.3|107|PMMA black|rod|9.525||opposed|2|20.0||5,L|EXT|L|out at pot 0.31
+P23|Fernandez-Pello|A.3|107|PMMA black|rod|9.525||opposed|2|18.2|17.0|2,L|EXT|L|out at pot 0.38
+P24|Fernandez-Pello|A.3|107|PMMA black|rod|9.525||opposed|2|19.0|17.5|2,L|EXT|L|out at pot 0.30
+P25|Fernandez-Pello|A.3|107|PMMA clear|rod|9.525||opposed|2|20.9|20.2|5,L|EXT|L|reburn; out at pot 0.31
+M1|Miller|A.4|108|PMMA|slab one-sided|1|2|opposed|2|22.2|21.9|10,8|EXT|0|put out by turning off flow
+M2|Miller|A.4|109|PMMA|slab one-sided|3|2|opposed|0|22.2|21.2|20,15|EXT|14|dim at 13, raised to 14, self-extinguished
+M3|Miller|A.4|109|PMMA|slab one-sided|5|2|opposed|2|20.8|19.7|10,20|EXT|18|
+M4|Miller|A.4|109|PMMA|slab|5|2|opposed|1|21.8|19.8|5,4,3|EXT|L|extinguished at pot 0.3
+M5|Miller|A.4|109|PMMA|slab two-sided|3|2|opposed|0|22.2|19.0|20,13,10,8|EXT|5|
+M6|Miller|A.4|109|PMMA|slab|1|2|opposed|1|21.8|20.7|10,5,3,L|END||plateaus at pot 0.4 and 0.36
+M7|Miller|A.4|109|PMMA|slab|1|1|opposed|2|18.9|18.4|10,6,5,4.5,4,3|END||burned entire sample
+M8|Miller|A.4|109|PMMA|slab|2|1|opposed|2|19.1|18.2|10,7,5|EXT|L|out at pot 0.4
+M9|Miller|A.4|109|PMMA|slab|3|1|opposed|2|18.0|17.6|10|EXT|14|died after 15 min at 14
+M10|Miller|A.4|108|PMMA|slab|4|1|opposed|2|20.1|18.6|10,17,14,10|EXT|8|self-extinguished at 8
+M11|Miller|A.4|108|PMMA|slab|5|1|opposed|2|20.0|18.5|10,20,15|EXT|12|29-min burn
+M12|Miller|A.4|108|PMMA|slab|2|2|opposed|1|21.7|20.4|L|END||plateaus at pot 0.35-0.4
+M13|Miller|A.4|108|PMMA|slab|4|2|opposed|1|20.8|19.0|10,6,5,4|EXT|L|extinguished at pot 0.3
+M14|Miller|A.4|108|PMMA|slab one-sided|2|2|opposed|2|22.2|21.6|10|EXT|9|self-extinguished at air reading 9
+M15|Miller|A.4|108|PMMA|slab one-sided|4|2|opposed|2|21.0|20.0|10,8,7,8,10,20,18,16|EXT|15|slow extinction at 15
+M16|Miller|A.4|108|PMMA|slab|1|2|opposed|2|19.2|18.7|10,6,3,2,1,10|END||
+M17|Miller|A.4|108|PMMA|slab|2|2|opposed|2|18.8|17.1|10,5,3|EXT|0|fan pot to 0
+M18|Miller|A.4|108|PMMA|slab|3|2|opposed|2|17.9|16.8|10,15,10|EXT|8|
+M19|Miller|A.4|109|PMMA|slab two-sided|4|2|opposed|2|19.0|17.4|10,17,14,10,7|EXT|5|went out on its own at 5
+M20|Miller|A.4|109|PMMA|slab|5|2|opposed|1|18.0|17.4|10|EXT|8|out 3 min after flow to 8
+O1|Olson|A.5|110|PMMA clear|rod|6.35||unknown|2|22.2|21.7|20,10,5,2,1|END||rod broken off by crew
+O2|Olson|A.5|110|PMMA clear|rod|6.35||unknown|2|22.2|21.9|2,L|END||
+O3a|Olson|A.5|111|PMMA clear|rod|6.35||concurrent|2|18.0|18.0|5|EXT|3|probably overshot when turning flow down
+O3b|Olson|A.5|111|PMMA clear|rod|6.35||concurrent|2|18.0|17.7|5,3,2,1,L|END||
+O4|Olson|A.5|111|PMMA clear|rod|9.525||stagnation|2|14.8|13.6|5,L|EXT|L|extinguished at pot 0.36
+O5a|Olson|A.5|111|PMMA clear|rod|12.7||concurrent|2|15.1|14.2|5,10,5,2,L|BLOW|~11|blew out at pot 4.0
+O5b|Olson|A.5|111|PMMA clear|rod|12.7||concurrent|2|14.2|14.1|NA|NOIGN|5|no flame without igniter
+O6|Olson|A.5|111|PMMA clear|rod|6.35||stagnation|2|16.7|16.0|5,L|EXT|L|out at pot 0.275
+O7|Olson|A.5|111|PMMA clear|rod|6.35||stagnation|2|16.0|15.5|5,L|BLOW|~22|blowoff at fan max
+O8a|Olson|A.5|111|PMMA clear|rod|6.35||stagnation|2|15.7|15.3|5,L|EXT|L|quench at pot 0.31
+O8b|Olson|A.5|111|PMMA clear|rod|6.35||stagnation|2|15.5|15.2|5,L|BLOW|~13|blowoff at pot 6.0
+O9|Olson|A.5|111|PMMA clear|rod|6.35||stagnation|2|15.0|14.8|5,L|BLOW|~11|blowoff at pot 4.0
+O10|Olson|A.5|110|PMMA clear|rod|6.35||concurrent|2|16.7|16.1|5,2,L|BLOW|~22|blowoff at max flow
+O11|Olson|A.5|110|PMMA black|rod|6.35||stagnation|2|15.4|14.8|5,L|BLOW|~13|blowoff at pot 6.0
+O12|Olson|A.5|110|PMMA clear|rod|9.525||stagnation|2|13.6|13.5|NA|NOIGN|~5|no sustained flame at any flow
+O13a|Olson|A.5|110|PMMA clear|rod|12.7||concurrent|2|15.9|14.6|5,2,L|EXT|L|self-extinguished at pot 0.31
+O13b|Olson|A.5|110|PMMA clear|rod|12.7||concurrent|2|14.6|14.4|NA|EXT|~4|lit under a minute
+O14|Olson|A.5|110|PMMA black|rod|6.35||concurrent|1|16.3|15.3|5,L|EXT|L|quench at pot 0.28
+O15a|Olson|A.5|110|PMMA clear|rod|9.525||stagnation|2|17.1|16.7|5,L|EXT|L|out at pot 0.32
+O15b|Olson|A.5|110|PMMA clear|rod|9.525||stagnation|2|16.7|15.6|5,L|EXT|L|reburn; out at pot 0.27
+O16|Olson|A.5|110|PMMA clear|rod|9.525||stagnation|2|14.5|14.5|NA|NOIGN|5|no sustained flame
+O17|Olson|A.5|110|PMMA clear|rod|6.35||concurrent|2|15.1|14.3|3,L|BLOW|11|leading-edge blowoff, did not recover
+O18|Olson|A.5|110|PMMA clear|rod|6.35||stagnation|2|15.2|14.5|5,2,L,11,2|BLOW|11|recovered once from 11, not the second time
+O19|Olson|A.5|110|PMMA clear|rod|6.35||concurrent|1|15.3|14.6|5,L|EXT|L|quench at pot 0.288
+T1|T'ien|A.6|112|SIBAL fabric|fabric||2|concurrent|2|18.5|18.5|10|END||flow held constant
+T2|T'ien|A.6|112|SIBAL fabric|fabric||2|concurrent|2|18.5|18.5|9,5,4|END||
+T3|T'ien|A.6|113|SIBAL fabric|spherical section||4|stagnation|2|17.2|16.8|NA|NOIGN|10|brief flames only
+T4|T'ien|A.6|113|SIBAL fabric|fabric||2|concurrent|2|18.7|18.7|9|EXT|1|became flamelet then out
+T5|T'ien|A.6|113|SIBAL fabric|fabric||2|concurrent|2|18.8|18.9|10,2,1|END||flamelet burned full length
+T6|T'ien|A.6|113|SIBAL fabric|fabric||2|concurrent|2|18.8|18.8|5,2,1,L|END||did not extinguish
+T7|T'ien|A.6|113|SIBAL fabric|spherical section||4|stagnation|2|17.3|17.1|10,5,3,1,L|EXT|L|extinction at pot 0.28
+T9|T'ien|A.6|113|SIBAL fabric|fabric||2|concurrent|2|16.4|16.4|NA|NOIGN|10|out before spreading beyond igniter
+T10|T'ien|A.6|112|SIBAL fabric|fabric||2|concurrent|2|16.4|16.5|NA|NOIGN|5|out before spreading beyond igniter
+T11|T'ien|A.6|112|SIBAL fabric|fabric||2|concurrent|2|17.1|17.0|5|END||burned completely
+T12|T'ien|A.6|112|SIBAL fabric|fabric||2|concurrent|2|16.8|16.9|NA|NOIGN|5|extinguished quickly
+T13|T'ien|A.6|112|SIBAL fabric|fabric||2|concurrent|2|17.5|17.6|5|EXT|1|out quickly after flow change
+T14|T'ien|A.6|112|SIBAL fabric|fabric||2|concurrent|2|16.9|16.9|5,3|EXT|~2|out when flow reduced below 3
+T15|T'ien|A.6|112|SIBAL fabric|fabric||2|concurrent|0|18.7|18.7|9,29|END||no blowoff at 29
+T16|T'ien|A.6|112|SIBAL fabric|fabric||2|concurrent|2|17.6|17.5|5,3|END||spread whole sample at 3
+T17|T'ien|A.6|112|SIBAL fabric|fabric||2|concurrent|0|16.9|16.9|6,~47|END||tried blowoff, did not
+T18|T'ien|A.6|112|SIBAL fabric|fabric||2|concurrent|2|17.4|17.4|NA|NOIGN|5|out as it left igniter
+T19|T'ien|A.6|112|SIBAL fabric|fabric||1|concurrent|2|17.2|17.2|11|END||steady burn
+T20|T'ien|A.6|112|SIBAL fabric|fabric||1|concurrent|2|17.2|17.2|11|EXT|3|quick extinction at 3
+T21|T'ien|A.6|112|SIBAL fabric|fabric||1|concurrent|0|17.2|17.2|11|BLOW|47|successful blowoff
+T22|T'ien|A.6|112|SIBAL fabric|fabric||1|concurrent|2|17.1|17.0|10|EXT|5|
+T24|T'ien|A.6|112|SIBAL fabric|fabric one-sided||1|concurrent|2|18.2|18.2|10|END||steady one-sided spread
+T25|T'ien|A.6|113|SIBAL fabric|fabric||2|concurrent|1|20.8|20.7|5,2.5|END||
+T26|T'ien|A.6|113|SIBAL fabric|fabric||2|concurrent|1|20.8|20.7|5,2.5|END||
+T27|T'ien|A.6|113|SIBAL fabric|fabric||1|concurrent|1|20.7|20.6|5,2|END||fuel burned out
+T29|T'ien|A.6|113|SIBAL fabric|fabric||1|concurrent|1|20.7|20.5|5|EXT|~2|out after fan pot 0.6

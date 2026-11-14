@@ -1,0 +1,19 @@
+rows=334 tests=118 burning=248 extinction=86
+held-out AUC 0.790±0.005 | balanced acc 0.611 | Brier 0.150 (no-skill 0.191)
+coefficients (raw units):
+  o2_pct         +0.293
+  log_flow       +3.402
+  log_flow_sq    -2.946
+  fam_thick_slab +0.193
+  fam_rod        +0.964
+  fam_fabric     +0.175
+  intercept      -4.695
+examples, P(sustained flame) [90% band]:
+  O2 21%, flow 0.3 cm/s, thin_film : 0.41 [0.28-0.54]
+  O2 21%, flow 5 cm/s, thin_film : 0.92 [0.89-0.95]
+  O2 21%, flow 5 cm/s, thick_slab: 0.93 [0.90-0.96]
+  O2 17%, flow 0.5 cm/s, rod       : 0.59 [0.53-0.64]
+  O2 17%, flow 5 cm/s, rod       : 0.90 [0.86-0.94]
+  O2 15%, flow 5 cm/s, rod       : 0.83 [0.76-0.89]
+  O2 14%, flow 5 cm/s, rod       : 0.79 [0.69-0.86]
+  O2 17%, flow 40 cm/s, fabric    : 0.16 [0.03-0.41]
