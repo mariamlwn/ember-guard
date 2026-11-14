@@ -10,6 +10,7 @@ Ember Guard is a (digital) inspection robot concept for spacecraft. It flies to 
 - **Real NASA microgravity fire data.** The model is trained on all 122 usable tests of the ISS experiment BASS-II (Burning and Suppression of Solids II), transcribed line by line from the report's test matrices, with source and page on every row.
 - **Real ISS cabin air, live.** "Use real ISS air" reads the US Lab's oxygen, CO₂, pressure and temperature from NASA's public ISS Live telemetry and runs the BASS-II model on the air astronauts are breathing now.
 - **Explainable and honest.** A small logistic regression with 6 inputs; every estimate shows a 90 % uncertainty band, a "why this number" breakdown and an out-of-range warning.
+- **Play a night shift.** One button replays a full scripted night: oxygen rises, ventilation slows, Ember cuts the module's ventilation on its own and sends a holographic report. Night and day modes.
 - **Talk to Ember.** Closed-domain voice/text assistant that runs on board without internet: it answers only about air, flame risk and safety actions, runs "what if" questions through the model, and cites the source of every fact.
 
 ## Repository

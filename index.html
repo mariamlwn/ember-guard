@@ -8,10 +8,20 @@
   --bg:#050a10; --panel:rgba(16,34,50,.42); --panel2:rgba(30,58,82,.35); --line:rgba(120,205,255,.22); --holo:#7fd6ff; --fg:#dbe5ee; --muted:#8597a8;
   --safe:#47b8ff; --warn:#ff9a3c; --danger:#ff4f4f; --eye:var(--safe);
   --display:"Chakra Petch","Segoe UI",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,-apple-system,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --glow:#123049; --grid:rgba(127,214,255,.05); --scan:rgba(127,214,255,.035); --ptop:rgba(40,90,130,.30); --pshadow:rgba(0,0,0,.35);
+  --band:rgba(219,229,238,.12); --me:#1f3a52; --veil:rgba(2,8,14,.45); --sheet:rgba(20,50,75,.25); --cardA:rgba(60,130,180,.28); --cardB:rgba(10,25,40,.55); --bg2:var(--bg);
   color-scheme:dark;
 }
+/* Day mode: glass over pale sky fading into warm sand, deep-blue accents */
+:root[data-mode="day"]{
+  --bg:#dcebf4; --bg2:#efe2cf; --panel:rgba(255,255,255,.42); --panel2:rgba(255,255,255,.5); --line:rgba(20,90,140,.28); --holo:#0a6aa6;
+  --fg:#10222f; --muted:#4a6070; --safe:#1677c4; --warn:#c8650a; --danger:#cf2b2b;
+  --glow:#ffffff; --grid:rgba(10,106,166,.07); --scan:rgba(10,106,166,.025); --ptop:rgba(255,255,255,.65); --pshadow:rgba(40,80,110,.15);
+  --band:rgba(16,34,47,.10); --me:#cfe4f3; --veil:rgba(220,235,244,.5); --sheet:rgba(255,255,255,.35); --cardA:rgba(255,255,255,.75); --cardB:rgba(225,238,247,.6);
+  color-scheme:light;
+}
 *{box-sizing:border-box}
-body{background:radial-gradient(ellipse at 50% -10%,#123049 0%,transparent 60%),linear-gradient(rgba(127,214,255,.05) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,rgba(127,214,255,.05) 1px,transparent 1px) 0 0/40px 40px,var(--bg);background-attachment:fixed;color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 40px}
+body{background:radial-gradient(ellipse at 50% -10%,var(--glow) 0%,transparent 60%),linear-gradient(var(--grid) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(180deg,var(--bg),var(--bg2));transition:color .4s;background-attachment:fixed;color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 40px}
 .wrap{max-width:1180px;margin:0 auto;display:grid;gap:16px}
 h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:.02em}
 h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:600}
@@ -21,21 +31,21 @@ header h1{font-size:26px}
 header p{margin:2px 0 0;color:var(--muted);font-size:14px}
 .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-family:var(--mono);font-size:12px;color:var(--muted)}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--eye);box-shadow:0 0 8px var(--eye)}
-.panel{position:relative;background:linear-gradient(160deg,rgba(40,90,130,.30),var(--panel) 40%);border:1px solid var(--line);border-radius:3px;padding:16px;min-width:0;-webkit-backdrop-filter:blur(12px) saturate(1.2);backdrop-filter:blur(12px) saturate(1.2);box-shadow:inset 0 0 30px rgba(127,214,255,.06),0 0 24px rgba(0,0,0,.35);animation:holoIn .7s ease-out both}
+.panel{position:relative;background:linear-gradient(160deg,var(--ptop),var(--panel) 40%);border:1px solid var(--line);border-radius:3px;padding:16px;min-width:0;-webkit-backdrop-filter:blur(12px) saturate(1.2);backdrop-filter:blur(12px) saturate(1.2);box-shadow:inset 0 0 30px rgba(127,214,255,.06),0 0 24px var(--pshadow);animation:holoIn .7s ease-out both}
 .panel::before,.panel::after{content:"";position:absolute;width:14px;height:14px;border-color:var(--holo);border-style:solid;opacity:.8;pointer-events:none}
 .panel::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
 .panel::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
 @keyframes holoIn{from{transform:translateY(6px) scale(.99);filter:brightness(1.6)}to{transform:none;filter:none}}
-body::after{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(127,214,255,.035) 0 1px,transparent 1px 3px);z-index:50}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,var(--scan) 0 1px,transparent 1px 3px);z-index:50}
 h2{text-shadow:0 0 8px rgba(127,214,255,.35)}
 .big{text-shadow:0 0 18px currentColor}
 /* holographic report overlay */
 [hidden]{display:none!important}
-.holo{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(2,8,14,.45);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.holo{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:var(--veil);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
 .holo-stack{position:relative;width:min(640px,100%);perspective:900px}
-.sheet{position:absolute;inset:0;border:1px solid var(--line);background:rgba(20,50,75,.25);transform:translate(14px,14px);border-radius:3px}
+.sheet{position:absolute;inset:0;border:1px solid var(--line);background:var(--sheet);transform:translate(14px,14px);border-radius:3px}
 .sheet.s2{transform:translate(28px,28px);opacity:.5}
-.holo-card{position:relative;border:1px solid var(--holo);background:linear-gradient(160deg,rgba(60,130,180,.28),rgba(10,25,40,.55));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-radius:3px;padding:20px;box-shadow:0 0 40px rgba(127,214,255,.25),inset 0 0 40px rgba(127,214,255,.08);animation:unfold .6s cubic-bezier(.2,.8,.2,1) both;transform-origin:top center}
+.holo-card{position:relative;border:1px solid var(--holo);background:linear-gradient(160deg,var(--cardA),var(--cardB));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-radius:3px;padding:20px;box-shadow:0 0 40px rgba(127,214,255,.25),inset 0 0 40px rgba(127,214,255,.08);animation:unfold .6s cubic-bezier(.2,.8,.2,1) both;transform-origin:top center}
 @keyframes unfold{from{transform:rotateX(-70deg);opacity:.2}to{transform:none;opacity:1}}
 .holo-card h3{font-size:16px;letter-spacing:.14em;color:var(--holo);margin-bottom:12px}
 .holo-lines{display:grid;gap:6px;font-family:var(--mono);font-size:13px}
@@ -113,7 +123,7 @@ th{color:var(--muted);font-weight:500;position:sticky;top:0;background:var(--pan
 .chat{display:grid;gap:10px}
 .chatlog{background:var(--panel2);border-radius:4px;padding:10px;height:260px;overflow-y:auto;display:flex;flex-direction:column;gap:8px}
 .msg{max-width:85%;padding:7px 10px;border-radius:6px;font-size:14px;line-height:1.45;overflow-wrap:anywhere}
-.msg.me{align-self:flex-end;background:#1f3a52}
+.msg.me{align-self:flex-end;background:var(--me)}
 .msg.bot{align-self:flex-start;background:var(--panel);border:1px solid var(--line)}
 .msg.bot b{color:var(--eye);font-family:var(--display);letter-spacing:.04em;font-weight:600}
 .msg cite{display:block;font-style:normal;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:4px}
@@ -124,6 +134,22 @@ th{color:var(--muted);font-weight:500;position:sticky;top:0;background:var(--pan
 .talking .eye{animation:talk .18s ease-in-out infinite alternate}
 @keyframes talk{to{opacity:.55}}
 @media (prefers-reduced-motion:reduce){.talking .eye{animation:none}}
+.badge{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:12px;color:var(--holo);border:1px solid var(--line);border-radius:999px;padding:4px 12px;text-decoration:none;background:rgba(127,214,255,.06)}
+.demo{border-color:var(--holo);color:var(--holo);font-family:var(--display);font-weight:600;letter-spacing:.04em;box-shadow:0 0 14px rgba(127,214,255,.25)}
+.guide{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:g}
+.guide li{counter-increment:g;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px}
+.guide li::before{content:counter(g);font-family:var(--display);color:var(--holo);margin-right:8px;font-weight:700}
+.guide b{color:var(--fg)}
+@media (max-width:760px){.guide{grid-template-columns:1fr}}
+.caption{font-family:var(--display);color:var(--holo);font-size:15px;letter-spacing:.04em;min-height:1.4em}
+.ins{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px}
+@media (max-width:900px){.ins{grid-template-columns:1fr}}
+.find{margin:0;padding:0;list-style:none;display:grid;gap:10px;counter-reset:f}
+.find li{counter-increment:f;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;font-size:14px}
+.find li::before{content:counter(f);font-family:var(--display);font-size:20px;color:var(--holo);font-weight:700;line-height:1.1}
+.find cite{display:block;font-style:normal;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.card dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px;margin:0;font-size:13.5px}
+.card dt{color:var(--muted)}.card dd{margin:0}
 footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;display:grid;gap:6px}
 footer p{margin:0;max-width:95ch}
 a{color:var(--safe)}
@@ -133,10 +159,21 @@ a{color:var(--safe)}
 <header>
   <div>
     <h1>Ember Guard</h1>
-    <p>Inspection robot that estimates how well cabin air could sustain a flame, before there is one.</p>
+    <p>Inspection robot that estimates how well cabin air could sustain a flame, before there is one. It watches while the crew sleeps, on the ISS today and on future lunar and Mars habitats.</p>
+    <a class="badge" href="https://ntrs.nasa.gov/citations/20210011385" target="_blank" rel="noopener">Risk model trained on 122 NASA BASS-II burn tests from the ISS</a>
   </div>
-  <span class="pill"><span class="dot"></span><span id="status">Docked · Lab module · thrusters off</span></span>
+  <div class="row" style="align-items:center">
+    <button id="btnMode" aria-pressed="false">☀ Day mode</button>
+    <button class="demo" id="btnDemo">▶ Play a night shift</button>
+    <span class="pill"><span class="dot"></span><span id="status">Docked · Lab module · thrusters off</span></span>
+  </div>
 </header>
+
+<ol class="guide">
+  <li><b>Read the eyes.</b> Blue: safe margin. Orange: alert. Red: danger. The % is the chance a flame could survive in this air.</li>
+  <li><b>Change the air.</b> Pick a scenario or move oxygen and airflow. "Why this number" shows what drives the estimate.</li>
+  <li><b>Act.</b> Cut ventilation or power for one module. If the crew sleeps, Ember acts on its own and sends a report.</li>
+</ol>
 
 <section class="top">
   <div class="panel robot">
@@ -199,6 +236,7 @@ a{color:var(--safe)}
 </section>
 
 <section class="panel poly">
+  <div class="caption" id="caption" aria-live="polite"></div>
   <div class="polyhead">
     <h2>Air polygraph</h2>
     <span class="mono note" id="peak">Peak --</span>
@@ -243,6 +281,33 @@ a{color:var(--safe)}
       <button id="btnReport">Create shift report</button>
     </div>
     <div class="reports" id="reports"></div>
+  </div>
+</section>
+
+<section class="ins">
+  <div class="panel">
+    <h2 style="margin-bottom:12px">What NASA's ISS fire tests teach, ranked by what Ember uses most</h2>
+    <ol class="find">
+      <li><div>In orbit, <b>airflow is the main lever</b>. A thin plastic flame in normal air dies when airflow falls to about 1 cm/s, so cutting a module's ventilation can starve a fire. In this demo it drops the estimate from about 84% to 53%.<cite>NASA/TM-20210011385, p. 13 · Ember Guard model</cite></div></li>
+      <li><div><b>Less gravity can mean more danger at low oxygen.</b> Plastic rods that stopped burning below 18.5% O₂ on Earth kept spreading at 17% in orbit, and BASS-II flames survived near 14.6% O₂.<cite>Link et al. 2018 · NASA/TM-20210011385, Appendix A, p. 110 (test O19)</cite></div></li>
+      <li><div><b>Less oxygen means a flame needs more airflow.</b> At 16% O₂ thin plastic flames already went out at 2.6 to 4 cm/s.<cite>NASA/TM-20210011385, p. 13</cite></div></li>
+      <li><div><b>Thick materials need strong airflow.</b> Thick plastic panels went out at 5 to 18 cm/s, flows that kept thin films burning.<cite>NASA/TM-20210011385, Table A.4 (tests M3, M10, M11, M15, M19)</cite></div></li>
+      <li><div><b>Too much wind blows flames off.</b> Rods and fabric blew out at about 11 to 47 cm/s.<cite>NASA/TM-20210011385, Tables A.5, A.6</cite></div></li>
+      <li><div><b>Smoke comes early.</b> These flames ran fuel-rich, making about 550 ppm of CO per 1% of CO₂.<cite>NASA/TM-20210011385, p. 7</cite></div></li>
+    </ol>
+  </div>
+  <div class="panel card">
+    <h2 style="margin-bottom:12px">Model card</h2>
+    <dl>
+      <dt>Estimates</dt><dd>Chance a flame could keep burning in this air. Not a fire detector.</dd>
+      <dt>Inputs</dt><dd>O₂ %, airflow (cm/s), material family</dd>
+      <dt>Method</dt><dd>Logistic regression, 6 terms, readable coefficients</dd>
+      <dt>Data</dt><dd id="mcData"></dd>
+      <dt>Validation</dt><dd id="mcVal"></dd>
+      <dt>Uncertainty</dt><dd>90% band from 120 bootstrap refits</dd>
+      <dt>Valid for</dt><dd>O₂ 13.5–22%, airflow 0.4–47 cm/s, ~1 atm, PMMA and cotton-fiberglass</dd>
+      <dt>Not learned</dt><dd>CO₂, temperature, humidity (BASS-II did not vary them)</dd>
+    </dl>
   </div>
 </section>
 
@@ -293,6 +358,7 @@ function predict(o2,flow,fam){
   return {p:sig(z),lo:ps[Math.floor(ps.length*.05)],hi:ps[Math.floor(ps.length*.95)]};
 }
 const levelOf=p=>p>=.85?"danger":p>=.6?"warn":"safe";
+let curLv=null;function levelH(p){const raw=levelOf(p);if(!curLv||raw===curLv)return curLv=raw;const h=.02;const ok=(raw==="danger"&&p>=.85+h)||(raw==="safe"&&p<.6-h)||(raw==="warn"&&((curLv==="safe"&&p>=.6+h)||(curLv==="danger"&&p<.85-h)));if(ok)curLv=raw;return curLv}
 const LV={safe:{txt:"SAFE MARGIN",col:"--safe"},warn:{txt:"ALERT",col:"--warn"},danger:{txt:"DANGER",col:"--danger"}};
 // slider 0..100 -> flow 0..50 cm/s (log-ish)
 const s2f=s=>s<=0?0:+(0.2*Math.pow(250,s/100)).toFixed(2);
@@ -323,7 +389,7 @@ $("btnAuto").onclick=()=>{st.auto=!st.auto;$("btnAuto").classList.toggle("on",st
 $("btnAck").onclick=()=>{st.acked=true;st.cd=null;$("countdown").textContent="Crew acknowledged. Robot waits for crew decision.";log("Crew acknowledged alert")};
 $("btnReport").onclick=makeReport;
 $("btnSound").onclick=()=>{st.sound=!st.sound;$("btnSound").textContent=st.sound?"Voice and sound on":"Turn on voice and sound";$("btnSound").setAttribute("aria-pressed",st.sound);if(st.sound){beep(660);say("Ember Guard online. Watching the air while you sleep.")}};
-function cutVent(who){st.vent=false;st.tFlow=0.3;syncInputs();st.cd=null;log((who==="robot"?"ROBOT (auto)":"Crew")+" cut ventilation in module");say("Ventilation cut. Without airflow, a flame would starve.");renderMods();$("countdown").textContent=who==="robot"?"Robot cut ventilation automatically.":"";}
+function cutVent(who){st.vent=false;st.tFlow=0.4;syncInputs();st.cd=null;log((who==="robot"?"ROBOT (auto)":"Crew")+" cut ventilation in module");say("Ventilation cut. Without airflow, a flame would starve.");renderMods();$("countdown").textContent=who==="robot"?"Robot cut ventilation automatically.":"";}
 
 // ---- Ember's voice: browser speech engine tuned to a calm, low robot voice + signature chirp + eyes that pulse while speaking ----
 const EMBER_VOICE={pitch:0.95,rate:0.95,volume:0.9,name:null,prefer:["Google UK English Male","Daniel","Microsoft Ryan","Microsoft Guy","Alex","Google US English","Samantha"]};
@@ -343,7 +409,7 @@ const tstr=()=>new Date().toTimeString().slice(0,8);
 let pendingEvent="";
 function log(ev){pendingEvent=ev;record(true)}
 function record(force){
-  const r=predict(st.o2,st.flow,st.fuel),lv=levelOf(r.p);
+  const r=predict(st.o2,st.flow,st.fuel),lv=curLv||levelOf(r.p);
   const row={t:tstr(),mod:MODULES.find(m=>m.id===st.mod).name,o2:st.o2.toFixed(1),flow:st.flow.toFixed(1),fuel:FAMLBL[st.fuel],p:r.p,lo:r.lo,hi:r.hi,lv,ev:pendingEvent};
   if(!force&&!pendingEvent&&st.hist.length&&st.hist[0].lv===lv&&tick%10)return;
   pendingEvent="";st.hist.unshift(row);if(st.hist.length>300)st.hist.pop();
@@ -360,12 +426,12 @@ function step(){
   if(live.on&&live.last&&Date.now()-live.last>120000)$("liveNote").textContent="Live: no new ISS data for 2 min (the station may be out of contact). Holding last values.";
   const n=()=> (Math.random()-.5);
   st.o2+= (st.tO2-st.o2)*.25 + n()*.05;
-  const tf=st.vent?st.tFlow:Math.min(st.tFlow,0.3);
+  const tf=st.vent?st.tFlow:Math.min(st.tFlow,0.4);
   st.flow=Math.max(0,st.flow+(tf-st.flow)*.3+n()*Math.max(.05,st.flow*.04));
   if(live.on&&live.v.co2!=null){st.co2=live.v.co2;st.t=live.v.t??st.t;}
   else{st.co2=Math.max(.2,.4+n()*.02+(st.vent?0:.15));st.t=22.5+n()*.2+(st.power?0:-.5);}
   st.rh=45+n()*.6;
-  const r=predict(st.o2,st.flow,st.fuel),lv=levelOf(r.p);
+  const r=predict(st.o2,st.flow,st.fuel),lv=levelH(r.p);
   st.series.push({p:r.p,lo:r.lo,hi:r.hi,lv});if(st.series.length>120)st.series.shift();
   if(!st.peak||r.p>st.peak.p)st.peak={p:r.p,t:tstr()};
   if(lv!==st.lastLevel){
@@ -414,7 +480,7 @@ function draw(){
   [0,.6,.85,1].forEach(p=>{g.beginPath();g.moveTo(L,Y(p));g.lineTo(W-R,Y(p));g.stroke();g.fillText(Math.round(p*100)+"%",2,Y(p)+4)});
   g.fillText("−2 min",L,H-4);g.fillText("now",W-R-22,H-4);
   const s=st.series;if(s.length<2)return;const off=120-s.length;
-  g.beginPath();s.forEach((d,i)=>g.lineTo(X(i+off),Y(d.hi)));for(let i=s.length-1;i>=0;i--)g.lineTo(X(i+off),Y(s[i].lo));g.closePath();g.fillStyle="rgba(219,229,238,.10)";g.fill();
+  g.beginPath();s.forEach((d,i)=>g.lineTo(X(i+off),Y(d.hi)));for(let i=s.length-1;i>=0;i--)g.lineTo(X(i+off),Y(s[i].lo));g.closePath();g.fillStyle=col("--band");g.fill();
   for(let i=1;i<s.length;i++){g.beginPath();g.moveTo(X(i-1+off),Y(s[i-1].p));g.lineTo(X(i+off),Y(s[i].p));g.strokeStyle=col(LV[s[i].lv].col);g.lineWidth=2;g.stroke()}
   let pk=0;s.forEach((d,i)=>{if(d.p>s[pk].p)pk=i});g.fillStyle=col("--fg");g.beginPath();g.arc(X(pk+off),Y(s[pk].p),3.5,0,7);g.fill();
   const e=s[s.length-1];g.fillStyle=col(LV[e.lv].col);g.beginPath();g.arc(X(119),Y(e.p),4.5,0,7);g.fill();
@@ -512,7 +578,7 @@ function answer(q){
   const t=q.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
   const r=predict(st.o2,st.flow,st.fuel),pct=v=>Math.round(v*100)+"%";
   // commands
-  if(/cut.*(vent|fan|air)|corta.*(vent|aire)/.test(t)){cutVent("crew");return{a:`Ventilation cut in ${MODULES.find(m=>m.id===st.mod).name}. Without airflow, my estimate drops toward ${pct(predict(st.o2,0.3,st.fuel).p)}.`,c:"Ember Guard model"}}
+  if(/cut.*(vent|fan|air)|corta.*(vent|aire)/.test(t)){cutVent("crew");return{a:`Ventilation cut in ${MODULES.find(m=>m.id===st.mod).name}. Without airflow, my estimate drops toward ${pct(predict(st.o2,0.4,st.fuel).p)}.`,c:"Ember Guard model"}}
   if(/cut.*power|corta.*(corriente|luz)/.test(t)){$("btnPower").click();return{a:"Power cut in this module.",c:""}}
   if(/restore|restaura|turn.*back/.test(t)){$("btnRestore").click();return{a:"Ventilation and power restored.",c:""}}
   if(/report|informe/.test(t)){makeReport();return{a:"Shift report created and ready for the other cabin.",c:""}}
@@ -525,10 +591,10 @@ function answer(q){
   const f=FACTS.find(f=>f.k.test(t));if(f)return{a:typeof f.a==="function"?f.a():f.a,c:f.c};
   if(/why|explain|por que|risk|riesgo|status|estado|how.*air/.test(t)){
     const why=st.flow<1?"airflow is very low, which starves a flame":st.flow>25?"strong airflow can blow a flame off":"moderate airflow feeds a flame best";
-    return{a:`Risk is ${pct(r.p)} (band ${pct(r.lo)}–${pct(r.hi)}), level ${LV[levelOf(r.p)].txt.toLowerCase()}. Oxygen is ${st.o2.toFixed(1)}% and ${why}. Material: ${FAMLBL[st.fuel].toLowerCase()}.`,c:"Ember Guard model"}}
+    return{a:`Risk is ${pct(r.p)} (band ${pct(r.lo)}–${pct(r.hi)}), level ${LV[(curLv||levelOf(r.p))].txt.toLowerCase()}. Oxygen is ${st.o2.toFixed(1)}% and ${why}. Material: ${FAMLBL[st.fuel].toLowerCase()}.`,c:"Ember Guard model"}}
   if(/what.*(do|should)|recommend|que hago|ayuda|help|action/.test(t)){
-    const cut=predict(st.o2,0.3,st.fuel).p;
-    return{a:levelOf(r.p)==="safe"?`Nothing urgent: ${pct(r.p)}. I keep watching.`:`Cutting ventilation in this module would lower my estimate from ${pct(r.p)} to about ${pct(cut)}, because a flame in microgravity depends on airflow. Removing loose plastics or fabric also helps. Say "cut ventilation" and I will do it.`,c:"Ember Guard model; "+TM+", p. 13"}}
+    const cut=predict(st.o2,0.4,st.fuel).p;
+    return{a:(curLv||levelOf(r.p))==="safe"?`Nothing urgent: ${pct(r.p)}. I keep watching.`:`Cutting ventilation in this module would lower my estimate from ${pct(r.p)} to about ${pct(cut)}, because a flame in microgravity depends on airflow. Removing loose plastics or fabric also helps. Say "cut ventilation" and I will do it.`,c:"Ember Guard model; "+TM+", p. 13"}}
   return{a:OUT,c:""};
 }
 function addMsg(who,text,cite){const d=document.createElement("div");d.className="msg "+who;if(who==="bot"){d.innerHTML="<b>EMBER</b> ";d.append(text);if(cite){const c=document.createElement("cite");c.textContent="Source: "+cite;d.append(c)}}else d.textContent=text;$("chatlog").append(d);$("chatlog").scrollTop=1e9}
@@ -538,6 +604,28 @@ $("chatform").addEventListener("submit",e=>{e.preventDefault();ask($("chatq").va
 $("btnMic").onclick=()=>{const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){addMsg("bot","Voice input needs Chrome. You can type instead.","");return}
   try{const rec=new SR();rec.lang="en-US";rec.interimResults=false;$("btnMic").textContent="Listening…";rec.onresult=e=>ask(e.results[0][0].transcript);rec.onerror=e=>addMsg("bot","I could not hear you ("+e.error+"). The microphone may be blocked here; type instead.","");rec.onend=()=>$("btnMic").textContent="Mic";rec.start()}catch(e){addMsg("bot","Voice input is not available here. Type instead.","")}};
 addMsg("bot","Hello, I am Ember Guard. Ask me about the air in this cabin, flame risk, or what BASS-II learned on the ISS.","");
+// ---- Night / day mode ----
+function setMode(m){document.documentElement.dataset.mode=m;$("btnMode").textContent=m==="day"?"☾ Night mode":"☀ Day mode";$("btnMode").setAttribute("aria-pressed",m==="day");try{localStorage.setItem("eg_mode",m)}catch(e){};draw()}
+$("btnMode").onclick=()=>setMode(document.documentElement.dataset.mode==="day"?"night":"day");
+try{setMode(localStorage.getItem("eg_mode")||"night")}catch(e){setMode("night")}
+// ---- Demo mode: one night shift, scripted ----
+let demoT=[];
+function caption(t){$("caption").textContent=t}
+function playNight(){
+  demoT.forEach(clearTimeout);demoT=[];$("holo").hidden=true;
+  st.vent=true;st.power=true;st.acked=false;st.mod="node2";st.fuel="thin_film";st.tO2=20.9;st.tFlow=20;st.o2=20.9;st.flow=20;
+  if(!st.auto)$("btnAuto").click();syncInputs();renderMods();log("Demo: night shift started");
+  const at=(ms,f)=>demoT.push(setTimeout(f,ms));
+  setMode("night");caption("02:10 · Node 2 · crew asleep · Ember on watch");say("Night shift. The crew is asleep. I am watching Node 2.");
+  at(5000,()=>{caption("02:14 · Oxygen rising: a valve is stuck open");st.tO2=22.2;syncInputs();log("Demo: oxygen rising")});
+  at(9000,()=>{caption("02:16 · Ventilation slows to 8 cm/s");st.tFlow=8;syncInputs();log("Demo: ventilation slows")});
+  at(30000,()=>caption("02:18 · Ember cut ventilation in Node 2 · flame would starve"));
+  at(45000,()=>{caption("02:20 · Report sent to the crew in the other cabin");makeReport()});
+  at(60000,()=>caption(""));
+}
+$("btnDemo").onclick=playNight;
+$("mcData").textContent=`${M.n_tests} ISS tests, ${M.n_rows} conditions (NASA BASS-II, Appendix A)`;
+$("mcVal").textContent=`Tested on whole experiments never seen in training: AUC ${M.val.auc_mean.toFixed(2)}, Brier ${M.val.brier_mean.toFixed(3)} vs ${M.val.brier_no_skill.toFixed(3)} no-skill`;
 $("mStats").textContent=`${M.n_tests} tests, ${M.n_rows} conditions; held-out AUC ${M.val.auc_mean.toFixed(2)}, Brier ${M.val.brier_mean.toFixed(3)} vs ${M.val.brier_no_skill.toFixed(3)} for a no-skill guess`;
 syncInputs();renderMods();renderReports();
 // prefill ~40 s of history so the page opens in a working state

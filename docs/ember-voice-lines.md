@@ -9,9 +9,9 @@ Record with the same natural system voice used in the demo (Edge "Aria Online (N
 | 5–10 s | Robot flies in, grips handrail, thrusters off | "Hello, I'm Ember Guard. I watch the air while the crew sleeps." |
 | 10–17 s | Exploded view | "I measure oxygen and airflow, and estimate the flame risk with 122 real NASA fire tests from the ISS." |
 | 17–25 s | Panel in action (risk turns red, auto cut) | "Danger. This air could sustain a flame. Cutting ventilation." |
-| 25–30 s | Report reaches the other cabin | "Report sent. Risk down to forty-one percent." |
+| 25–30 s | Report reaches the other cabin | "Report sent. Risk down from ninety-two to sixty-three percent." |
 
 Notes
-- Every number said is real: 122 tests (BASS-II, NASA/TM-20210011385, Appendix A); 84 % → 41 % is the demo's estimate for normal cabin air (thin film, ~12 cm/s) after cutting ventilation.
+- Every number said is real: 122 tests (BASS-II, NASA/TM-20210011385, Appendix A); 92 % → 63 % is the demo night-shift estimate (O₂ 22.2 %, thin film, 8 → 0.4 cm/s after cutting ventilation; "Play a night shift" button).
 - Wording keeps "estimate the flame risk", never "detect fires".
 - If any AI-generated voice or image is used instead, mark it visibly as "AI-generated" (Space Apps rules).
