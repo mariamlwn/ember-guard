@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ember Guard Robot</title>
+<meta name="description" content="Ember Guard robot concept: the author's hand drawings, an interactive exploded view, parts and how it works.">
+<style>
+:root{--bg:#060a12;--panel:#0d1524;--line:#1f2c44;--ink:#e8eef8;--mute:#9fb0c8;--orange:#ff8a2a;--blue:#4cc3ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--blue)}
+.wrap{max-width:1100px;margin:0 auto;padding:32px 16px 64px}
+.kick{color:var(--orange);letter-spacing:.3em;font-size:13px;font-weight:700;text-transform:uppercase}
+h1{font-size:clamp(30px,5vw,48px);line-height:1.1;margin:8px 0 12px}
+h2{font-size:24px;margin:48px 0 12px}
+.lead{color:var(--mute);font-size:18px;max-width:760px}
+.nav{display:flex;gap:16px;flex-wrap:wrap;margin:20px 0 0;font-size:15px}
+.frame{position:relative;width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#000}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.note{color:var(--mute);font-size:14px;margin-top:8px}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:3px 8px;border-radius:6px;margin-top:6px}
+.tag.hand{background:#16301f;color:#8ee6a6}
+.tag.ai{background:#3a2410;color:#ffb36b}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px}
+figure img{width:100%;height:220px;object-fit:contain;background:#fff;border-radius:8px;display:block}
+figcaption{font-size:14px;color:var(--mute);margin-top:8px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mute);font-weight:600}
+.tw{overflow-x:auto}
+ol li,ul li{margin:6px 0}
+.box{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:10px;padding:16px 18px}
+footer{margin-top:56px;color:var(--mute);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kick">Ember Guard · Robot concept</div>
+  <h1>The robot behind the dashboard</h1>
+  <p class="lead">Ember Guard is a small free-flying cabin robot that watches the air when the crew cannot: while they are busy or asleep. It grips a handrail with its bottom gripper, switches its thrusters off, measures the air and estimates the fire risk with a model trained on 118 NASA BASS-II tests from the ISS. It estimates risk; it does not detect fires.</p>
+  <div class="nav"><a href="../">← Live dashboard demo</a><a href="exploded-view.html" target="_blank" rel="noopener">Open the exploded view full screen ↗</a><a href="https://github.com/mariamlwn/ember-guard">Code and data</a></div>
+
+  <h2>Exploded view</h2>
+  <div class="frame"><iframe src="exploded-view.html" title="Interactive exploded view of the Ember Guard robot" loading="lazy" allowfullscreen></iframe></div>
+  <p class="note">Drag to rotate. The parts separate and come back together, with labels. <span class="tag ai">AI-generated 3D model</span> made with Tripo3D from the author's hand drawings.</p>
+
+  <h2>Designed by hand</h2>
+  <p>The robot was designed on paper by the author, from the first pencil sketch to the final coloured sheet with front, back and exploded views.</p>
+  <div class="grid">
+    <figure><img src="img/design-final-colour-mariam.jpg" alt="Final hand-coloured design sheet of Ember Guard with front, back and exploded views" loading="lazy"><figcaption>Final coloured sheet: front, back and exploded views.<br><span class="tag hand">Hand-drawn by the author</span></figcaption></figure>
+    <figure><img src="img/design-ink-sheet-mariam.jpg" alt="Ink design sheet of Ember Guard" loading="lazy"><figcaption>Ink version of the design sheet.<br><span class="tag hand">Hand-drawn by the author</span></figcaption></figure>
+    <figure><img src="img/design-pencil-sheet-mariam.jpg" alt="Pencil draft of the Ember Guard design" loading="lazy"><figcaption>Pencil draft.<br><span class="tag hand">Hand-drawn by the author</span></figcaption></figure>
+    <figure><img src="img/design-hand-drawn-mariam.jpg" alt="Colour marker drawing of Ember Guard" loading="lazy"><figcaption>Colour marker drawing.<br><span class="tag hand">Hand-drawn by the author</span></figcaption></figure>
+    <figure><img src="img/design-face-mariam.jpg" alt="Hand drawing of the Ember Guard face visor" loading="lazy"><figcaption>Face visor with the eyes and the infrared camera.<br><span class="tag hand">Hand-drawn by the author</span></figcaption></figure>
+    <figure><img src="img/exploded-preview.png" alt="Rendered preview of the 3D exploded parts" loading="lazy" style="background:#0b111c"><figcaption>3D parts generated from the drawings.<br><span class="tag ai">AI-generated 3D model (Tripo3D)</span></figcaption></figure>
+  </div>
+
+  <h2>How a mission works</h2>
+  <ol>
+    <li><b>Fly</b> to the module on quiet micro-thrusters, avoiding crew and equipment with a depth sensor.</li>
+    <li><b>Grip</b> a handrail with the bottom gripper, so it stays still without thrusters.</li>
+    <li><b>Thrusters off</b> and wait for the local air to settle.</li>
+    <li><b>Sniff and look</b>: oxygen, CO₂, airflow, temperature and humidity, plus an infrared scan for surfaces that are warming up.</li>
+    <li><b>Estimate</b> the risk that this air could sustain a flame, with an uncertainty band.</li>
+    <li><b>Warn and report</b> with eye colour, voice and a live dashboard on the crew's laptop.</li>
+    <li><b>Act preventively</b> if nobody answers: cut ventilation in that module. The crew can override at any time.</li>
+  </ol>
+
+  <div class="box"><b>Why it switches its thrusters off.</b> In microgravity there is no buoyancy, so air only moves when fans or vents push it. BASS-II showed that whether a flame survives depends strongly on very slow airflow, a few centimetres per second. A thruster jet would distort exactly the number the model depends on, so Ember holds on and goes silent before it measures.</div>
+
+  <h2>Parts</h2>
+  <div class="tw"><table>
+    <tr><th>Part</th><th>What it does</th></tr>
+    <tr><td>Face visor and eyes</td><td>Shows status: blue safe, orange alert, red danger. The infrared camera sits below the eyes.</td></tr>
+    <tr><td>Air sensor pod</td><td>Oxygen, CO₂, temperature and humidity.</td></tr>
+    <tr><td>Airflow sensor</td><td>Local air speed in cm/s, the key input of the risk model.</td></tr>
+    <tr><td>Depth sensor</td><td>Navigation and obstacle avoidance.</td></tr>
+    <tr><td>Micro-thrusters</td><td>Movement between modules, off while measuring.</td></tr>
+    <tr><td>Bottom gripper</td><td>Two-finger claw with soft pads that holds a handrail, to measure without thrusters or to stay next to an astronaut.</td></tr>
+    <tr><td>Onboard computer</td><td>Runs the risk model, the dashboard and a closed-domain voice chat, offline.</td></tr>
+    <tr><td>Speaker, memory card, battery and bumper</td><td>Voice alerts, stored reports, power and a soft edge to protect the crew.</td></tr>
+  </table></div>
+
+  <h2>Limits</h2>
+  <ul>
+    <li>It estimates the risk that a flame could be sustained; it does not detect or extinguish fires.</li>
+    <li>Valid only inside the tested ranges: O₂ 13.6–22.2 %, airflow 0.4–47 cm/s, about 1 atm, lab fuels.</li>
+    <li>The robot is a digital concept. No hardware was built; sizes and timings are not tested.</li>
+  </ul>
+
+  <footer>
+    NASA data: <a href="https://ntrs.nasa.gov/citations/20210011385">BASS-II Summary Report, NASA/TM-20210011385</a>.<br>
+    Authorship and AI use: the idea, the robot design (hand-drawn) and part of the research are the author's own work. The 3D model was generated with Tripo3D from the author's drawings and is labelled AI-generated. Code was written with AI coding help (Claude). No NASA logos are used in AI-generated content.<br>
+    NASA Space Apps Challenge 2026 · Flame in Freefall
+  </footer>
+</div>
+</body>
+</html>
